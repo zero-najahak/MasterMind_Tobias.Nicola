@@ -2,6 +2,7 @@ package ch.css.mastermind;
 
 import java.util.Scanner;
 import java.util.Random;
+import java.util.ArrayList;
 
 public class Main {
 
@@ -13,7 +14,30 @@ public class Main {
         boolean wait = true;
         int samecolour = 0;
         boolean numbergenerator = true;
+        int richtigePosition = 0;
 
+        //farbzuweisung
+
+        ArrayList<String> Colour = new ArrayList<String>();
+        Colour.add("blau");
+        Colour.add("gelb");
+        Colour.add("rot");
+        Colour.add("pink");
+        Colour.add("gruen");
+        Colour.add("violett");
+        Colour.add("weiss");
+        Colour.add("schwarz");
+
+
+
+
+
+
+
+        int random1 = 0;
+        int random2 = 0;
+        int random3 = 0;
+        int random4 = 0;
 
         //farbenkombination erstellen
         do {
@@ -24,16 +48,24 @@ public class Main {
             // Generating random values from 0 - 8
             // using nextInt()
 
-            int random1 = rand.nextInt(upperbound);
-            int random2 = rand.nextInt(upperbound);
-            int random3 = rand.nextInt(upperbound);
-            int random4 = rand.nextInt(upperbound);
+            random1 = rand.nextInt(upperbound);
+            random2 = rand.nextInt(upperbound);
+            random3 = rand.nextInt(upperbound);
+            random4 = rand.nextInt(upperbound);
             //random zahl
 
             System.out.println(random1);
             System.out.println(random2);
             System.out.println(random3);
             System.out.println(random4);
+
+
+            //zahlen zu farben umwandeln
+            System.out.println(Colour.get(random1));
+            System.out.println(Colour.get(random2));
+            System.out.println(Colour.get(random3));
+            System.out.println(Colour.get(random4));
+
 
             if (random1 == random2){
                 ++samecolour;
@@ -66,6 +98,9 @@ public class Main {
 
 
         }while(numbergenerator == false);
+
+
+
 
 
 
@@ -125,6 +160,14 @@ public class Main {
                 System.out.println("4. Versuch");
                 String Guess4 = input.nextLine();
                 System.out.println(Guess4);
+
+
+
+                if (Guess1 == random1){
+
+                }
+
+
 
 
             }

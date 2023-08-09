@@ -90,8 +90,10 @@ public class Main {
             }
 
             if (key.equals("i")) {
-                System.out.println("Schreibe alles klein. Drücke s zum fortfahren ");
-
+                System.out.println("Du musst versuchen die Farben richtig zueraten und die richtige Position zubestimmen.");
+                System.out.println("Du hast 12 Spielrunden Zeit um den Code richtig zueraten, pro spiel runde hast du Vier guesses");
+                System.out.println("Es wird dir angegeben welche Farbe und welche Position richtig ist");
+                System.out.println("Drücke s zum fortfahren");
 
 
                 }

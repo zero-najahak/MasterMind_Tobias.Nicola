@@ -8,7 +8,6 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("hallo");
 
         //variabeln definieren
         boolean run = true;
@@ -362,22 +361,6 @@ public class Main {
                 newposition4 = "nothing";
 
             }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             System.out.println("Anzahl richtige Farben:" + (fall));
             System.out.println("Anzahl richtige Positionen: " + richtigePosition);
             System.out.println("Anzahl Runden Gespielt: " + Rundenzaehler);
@@ -412,11 +395,7 @@ public class Main {
                 }
             }
 
-            richtigePosition = 0;
-
-
-
-
-        }
+                richtigePosition = 0;
+            }
     }
 }

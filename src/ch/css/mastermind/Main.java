@@ -1,5 +1,6 @@
 package ch.css.mastermind;
 
+import java.util.Objects;
 import java.util.Scanner;
 import java.util.Random;
 import java.util.ArrayList;
@@ -10,11 +11,22 @@ public class Main {
         System.out.println("hallo");
 
         //variabeln definieren
-        boolean run = false;
+        boolean run = true;
         boolean wait = true;
         int samecolour = 0;
         boolean numbergenerator = true;
         int richtigePosition = 0;
+        int Farbe=0;
+        int Rundenzaehler = 1;
+
+        String position1 = "blau";
+        String position2 = "blau";
+        String position3 = "blau";
+        String position4 = "blau";
+
+
+
+
 
         //farbzuweisung
 
@@ -27,11 +39,6 @@ public class Main {
         Colour.add("violett");
         Colour.add("weiss");
         Colour.add("schwarz");
-
-
-
-
-
 
 
         int random1 = 0;
@@ -66,44 +73,45 @@ public class Main {
             System.out.println(Colour.get(random3));
             System.out.println(Colour.get(random4));
 
+            position1 = (Colour.get(random1));
+            position2 = (Colour.get(random2));
+            position3 = (Colour.get(random3));
+            position4 = (Colour.get(random4));
 
-            if (random1 == random2){
+
+
+
+
+            if (random1 == random2) {
                 ++samecolour;
             }
 
-            if (random1 == random3){
+            if (random1 == random3) {
                 ++samecolour;
             }
-            if (random1 == random4){
+            if (random1 == random4) {
                 ++samecolour;
             }
-            if (random2 == random3){
+            if (random2 == random3) {
                 ++samecolour;
             }
-            if (random2 == random4){
+            if (random2 == random4) {
                 ++samecolour;
             }
-            if (random3 == random4){
+            if (random3 == random4) {
                 ++samecolour;
             }
-            if (samecolour<3){
+            if (samecolour < 3) {
                 numbergenerator = true;
 
             }
-            if (samecolour>2){
+            if (samecolour > 2) {
                 numbergenerator = false;
 
             }
 
 
-
-        }while(numbergenerator == false);
-
-
-
-
-
-
+        } while (!numbergenerator);
 
 
         // start i und s
@@ -113,36 +121,39 @@ public class Main {
         Scanner input = new Scanner(System.in);
 
 
-        String key = input.nextLine();
-
-
-        while (wait) {
-
-            if (key.equals("s")) {
-                run = true;
-                wait = false;
-
-            }
-
-            if (key.equals("i")) {
-                System.out.println("Schreibe alles klein. Drücke s zum fortfahren ");
 
 
 
-                }
 
-            key = input.nextLine();
-            if (key.equals("s")) {
-                    run = true;
-                    wait = false;
 
-                }
 
 
 
 
 
             while (run) {
+
+                while (wait) {
+                    String key = input.nextLine();
+                    System.out.println(key);
+
+                    if (key.equals("s")) {
+
+                        wait = false;
+
+                    }
+
+                    if (key.equals("i")) {
+                        System.out.println("Es werden 12 ");
+
+
+                    }
+                }
+
+                String newposition1 = "nothing";
+                String newposition2 = "nothing";
+                String newposition3 = "nothing";
+                String newposition4 = "nothing";
 
 
                 System.out.println("1. Versuch");
@@ -162,23 +173,153 @@ public class Main {
                 System.out.println(Guess4);
 
 
+                //update zu urspünglichen farbe
+                newposition1 = position1;
+                newposition2 = position2;
+                newposition3 = position3;
+                newposition4 = position4;
 
-                if (Guess1 == random1){
+
+                if (Guess1.equals(newposition1)) {
+                    ++richtigePosition;
+                    newposition1 = "nothing";
+                }
+                if (Guess2.equals(newposition2)) {
+                    ++richtigePosition;
+                    newposition2 = "nothing";
+                }
+                if (Guess3.equals(newposition3)) {
+                    ++richtigePosition;
+                    newposition3 = "nothing";
+                }
+                if (Guess4.equals(newposition4)) {
+                    ++richtigePosition;
+                    newposition4 = "nothing";
+                }
+
+                // Richtige Farben vergeichen
+
+
+                int fall = 0;
+
+                if (newposition2.equals(Guess1)) {
+                    ++fall;
+                    newposition2 = "nothing";
+                }
+                if (newposition3.equals(Guess1)) {
+                    ++fall;
+                    newposition3 = "nothing";
+
+                }
+                if (newposition1.equals(Guess1)) {
+                    ++fall;
+                    newposition1 = "nothing";
+
+
+                }
+                if (newposition4.equals(Guess1)) {
+                    ++fall;
+                    newposition4 = "nothing";
+
+                }
+                if (newposition1.equals(Guess2)) {
+                    ++fall;
+                    newposition1 = "nothing";
+
+                }
+                if (newposition2.equals(Guess2)) {
+                    ++fall;
+                    newposition2 = "nothing";
+
+                }
+                if (newposition3.equals(Guess2)) {
+                    ++fall;
+                    newposition3 = "nothing";
+
+                }
+                if (newposition4.equals(Guess2)) {
+                    ++fall;
+                    newposition4 = "nothing";
+
+                }
+                if (newposition1.equals(Guess3)) {
+                    ++fall;
+                    newposition1 = "nothing";
+
+                }
+                if (newposition2.equals(Guess3)) {
+                    ++fall;
+                    newposition2 = "nothing";
+
+                }
+                if (newposition3.equals(Guess3)) {
+                    ++fall;
+                    newposition3 = "nothing";
+
+                }
+                if (newposition4.equals(Guess3)) {
+                    ++fall;
+                    newposition4 = "nothing";
+
+                }
+                if (newposition1.equals(Guess4)) {
+                    ++fall;
+                    newposition1 = "nothing";
+
+                }
+                if (newposition2.equals(Guess4)) {
+                    ++fall;
+                    newposition2 = "nothing";
+
+                }
+                if (newposition3.equals(Guess4)) {
+                    ++fall;
+                    newposition3 = "nothing";
+
+                }
+                if (newposition4.equals(Guess4)) {
+                    ++fall;
+                    newposition4 = "nothing";
 
                 }
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+                System.out.println("Anzahl richtige Farben:" + (fall - richtigePosition));
+                System.out.println("Anzahl richtige Positionen: " + richtigePosition);
+                System.out.println("Anzahl Runden Gespielt: " + Rundenzaehler);
+                ++Rundenzaehler;
+
+                if (richtigePosition == 4) {
+                    run = false;
+                    System.out.println("Du hast Gewonnen, Glückwunsch");
+                }
+
+                if (Rundenzaehler == 13) {
+                    run = false;
+                    System.out.println("Du hast Verloren :(");
+                }
+
+                richtigePosition = 0;
+
+
+
+
             }
-
-
-        }
-
-
-
-
-
-
     }
 }
+
+

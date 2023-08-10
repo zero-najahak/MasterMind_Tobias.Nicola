@@ -115,8 +115,11 @@ public class Main {
 
 
         // start i und s
-
-        System.out.println("Drücke i für infos und s zum starten");
+        System.out.println("Es werden 12 Spielrundenen gespielt, jede Runde hast du 4 guesses.");
+        System.out.println("Du musst die richtige Farbe und die richtige Position erraten, wenn die Position stimmt wird die richtige Farbe nicht noch einmal angegeben.");
+        System.out.println("Zu verfügung stehen die Farben: gelb, blau, pink, rot,schwarz, weiss, violett und gruen.");
+        System.out.println("Der Code ist völlig Random und besteht aus Vier verschiedene Farben, es kannen auch eine Farbe doppelt vorkommen.");
+        System.out.println("Mit s kannst du das Spiel starten.");
 
         Scanner input = new Scanner(System.in);
 

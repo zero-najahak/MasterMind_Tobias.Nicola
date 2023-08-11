@@ -18,16 +18,13 @@ public class Main {
         boolean numbergenerator = true;
         boolean korrekteeingabe = false;
         int richtigePosition = 0;
-        int Farbe=0;
+        int Farbe = 0;
         int Rundenzaehler = 1;
 
         String position1 = "blau";
         String position2 = "blau";
         String position3 = "blau";
         String position4 = "blau";
-
-
-
 
 
         //farbzuweisung
@@ -87,9 +84,6 @@ public class Main {
             position4 = (Colour.get(random4));
 
 
-
-
-
             if (random1 == random2) {
                 ++samecolour;
             }
@@ -124,22 +118,17 @@ public class Main {
 
         // start i und s
 
+
         Scanner input = new Scanner(System.in);
 
-
-
-
-
-
-
-
-
-
+        System.out.println("Drüche s für Start ");
+        System.out.println("Drücke i für Info");
 
 
         while (run) {
 
             while (wait) {
+
                 String key = input.nextLine();
                 System.out.println(key);
 
@@ -166,91 +155,72 @@ public class Main {
             String newposition3 = "nothing";
             String newposition4 = "nothing";
 
-
-            System.out.println("1. Versuch");
-            String Guess1 = input.nextLine();
-            System.out.println(Guess1);
-            do{
-
-                do {
-                    ++AnzahlVergleich;
-                    if (!Objects.equals(Colour.get(AnzahlVergleich), Guess1) && !korrekteeingabe){
-                        System.out.println("ERROR, Farbe unbekannt");
-                        System.out.println("1. Versuch");
-                        Guess1 = input.nextLine();
-                    }
-
-                }while (AnzahlVergleich< 9 || korrekteeingabe);
-                if (Objects.equals(Colour.get(AnzahlVergleich), Guess1)) {
-                    korrekteeingabe = true;
-
-                }
-
-            }while (!korrekteeingabe);
-
             korrekteeingabe = false;
-            AnzahlVergleich =  0;
+            String Guess1 = "nothing";
+            String Guess2 = "nothing";
+            String Guess3 = "nothing";
+            String Guess4 = "nothing";
 
-            System.out.println("2. Versuch");
-            String Guess2 = input.nextLine();
-            System.out.println(Guess2);
-            do{
 
-                if (Objects.equals(Colour.get(AnzahlVergleich), Guess2)) {
+            while (!korrekteeingabe) {
+                System.out.println("1. Versuch");
+                Guess1 = input.nextLine();
+                if (Colour.contains(Guess1)) {
                     korrekteeingabe = true;
-                    ++AnzahlVergleich;
-
+                    System.out.println("Bekannte farbe");
+                } else {
+                    System.out.println("falsche Eingabe");
                 }
-                if (!Objects.equals(Colour.get(AnzahlVergleich), Guess2) && !korrekteeingabe){
-                    System.out.println("ERROR, Farbe unbekannt");
-                    System.out.println("2. Versuch");
-                    Guess2 = input.nextLine();
-                }
-            }while (!korrekteeingabe);
-
-            korrekteeingabe = false;
-            AnzahlVergleich =  0;
 
 
-            System.out.println("2. Versuch");
-            String Guess3 = input.nextLine();
-            System.out.println(Guess3);
-            do{
+            }
+            korrekteeingabe =false;
 
-                if (Objects.equals(Colour.get(AnzahlVergleich), Guess3)) {
+
+            while (!korrekteeingabe) {
+                System.out.println("2. Versuch");
+                Guess2 = input.nextLine();
+                if (Colour.contains(Guess2)) {
                     korrekteeingabe = true;
-                    ++AnzahlVergleich;
-
+                    System.out.println("Bekannte farbe");
+                } else {
+                    System.out.println("falsche Eingabe");
                 }
-                if (!Objects.equals(Colour.get(AnzahlVergleich), Guess3) && !korrekteeingabe){
-                    System.out.println("ERROR, Farbe unbekannt");
-                    System.out.println("3. Versuch");
-                    Guess3 = input.nextLine();
-                }
-            }while (!korrekteeingabe);
 
-            korrekteeingabe = false;
-            AnzahlVergleich =  0;
 
-            System.out.println("4. Versuch");
-            String Guess4 = input.nextLine();
-            System.out.println(Guess4);
-            do{
+            }
+            korrekteeingabe =false;
 
-                if (Objects.equals(Colour.get(AnzahlVergleich), Guess4)) {
+
+
+            while (!korrekteeingabe) {
+                System.out.println("3. Versuch");
+                Guess3 = input.nextLine();
+                if (Colour.contains(Guess3)) {
                     korrekteeingabe = true;
-                    ++AnzahlVergleich;
-
+                    System.out.println("Bekannte farbe");
+                } else {
+                    System.out.println("falsche Eingabe");
                 }
-                if (!Objects.equals(Colour.get(AnzahlVergleich), Guess4) && !korrekteeingabe){
-                    System.out.println("ERROR, Farbe unbekannt");
-                    System.out.println("4. Versuch");
-                    Guess4 = input.nextLine();
-                }
-            }while (!korrekteeingabe);
 
-            korrekteeingabe = false;
-            AnzahlVergleich =  0;
+
+            }
+            korrekteeingabe =false;
+
+
+            while (!korrekteeingabe) {
+                System.out.println("4. Versuch");
+                Guess4 = input.nextLine();
+                if (Colour.contains(Guess4)) {
+                    korrekteeingabe = true;
+                    System.out.println("Bekannte farbe");
+                } else {
+                    System.out.println("falsche Eingabe");
+                }
+
+
+            }
+            korrekteeingabe =false;
 
 
             //update zu urspünglichen farbe
@@ -282,10 +252,6 @@ public class Main {
 
             int fall = 0;
 
-            if (newposition2.equals(Guess1)) {
-                ++fall;
-                newposition2 = "nothing";
-            }
             if (newposition3.equals(Guess1)) {
                 ++fall;
                 newposition3 = "nothing";
@@ -307,11 +273,7 @@ public class Main {
                 newposition1 = "nothing";
 
             }
-            if (newposition2.equals(Guess2)) {
-                ++fall;
-                newposition2 = "nothing";
 
-            }
             if (newposition3.equals(Guess2)) {
                 ++fall;
                 newposition3 = "nothing";
@@ -332,11 +294,7 @@ public class Main {
                 newposition2 = "nothing";
 
             }
-            if (newposition3.equals(Guess3)) {
-                ++fall;
-                newposition3 = "nothing";
 
-            }
             if (newposition4.equals(Guess3)) {
                 ++fall;
                 newposition4 = "nothing";
@@ -357,26 +315,6 @@ public class Main {
                 newposition3 = "nothing";
 
             }
-            if (newposition4.equals(Guess4)) {
-                ++fall;
-                newposition4 = "nothing";
-
-            }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             System.out.println("Anzahl richtige Farben:" + (fall));
             System.out.println("Anzahl richtige Positionen: " + richtigePosition);
@@ -394,13 +332,13 @@ public class Main {
             }
 
 
-
             while (wait) {
-                String key = input.nextLine();
                 System.out.println("drücke n für noch eine Runde und e zum beenden");
+                String key = input.nextLine();
 
                 if (key.equals("e")) {
                     run = false;
+                    wait = false;
 
                 }
 
@@ -408,15 +346,9 @@ public class Main {
                     wait = false;
                     numbergenerator = false;
                     Rundenzaehler = 1;
-
                 }
             }
-
             richtigePosition = 0;
-
-
-
-
         }
     }
 }

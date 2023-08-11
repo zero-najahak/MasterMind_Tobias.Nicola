@@ -8,7 +8,6 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("hallo");
 
         //variabeln definieren
         boolean run = true;
@@ -25,6 +24,9 @@ public class Main {
         String position2 = "blau";
         String position3 = "blau";
         String position4 = "blau";
+
+
+
 
 
         //farbzuweisung
@@ -84,6 +86,9 @@ public class Main {
             position4 = (Colour.get(random4));
 
 
+
+
+
             if (random1 == random2) {
                 ++samecolour;
             }
@@ -117,7 +122,6 @@ public class Main {
 
 
         // start i und s
-
 
         Scanner input = new Scanner(System.in);
 
